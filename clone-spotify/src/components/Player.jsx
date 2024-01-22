@@ -1,4 +1,5 @@
 import { usePlayerStore } from "@/store/playerStore"
+import { Slider } from "@radix-ui/react-slider"
 import { useEffect, useRef, useState } from "react"
 
 export const Pause = ({ width, height, color }) => (
@@ -7,36 +8,64 @@ export const Pause = ({ width, height, color }) => (
 export const Play = ({ width, height, color }) => (
   <svg role="img" width={width} height={height} aria-hidden="true" viewBox="0 0 16 16"><path fill={color | "currentColor"} d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>
 )
+const CurrentSong = ({ image, title, artists }) => {
+  return (
+    <div className="flex items-center gap-5 relative overflow-hidden">
+      <picture className="w-16 h-16  bg-zinc-800 rounded-md overflow-hidden">
+        <img src={image} alt={title} />
+      </picture>
+      <div className="flex gap-1 flex-col">
 
+        <h3 className="font-semibold text-base block">
+          {title}
+        </h3>
+        <span className="text-xs opacity-80">
+          {artists?.join(', ')}
+
+        </span>
+      </div>
+
+    </div>
+  )
+}
 export function Player() {
-  const { isPlaying, setIsPlaying } = usePlayerStore(state => state)
-  const [currentSong, setCurrentSong] = useState(null)
+  const { isPlaying, currentMusic, setIsPlaying, setCurrentMusic } = usePlayerStore(state => state)
   const audioRef = useRef()
 
+  useEffect(() => {
+    isPlaying
+      ? audioRef.current.play()
+      : audioRef.current.pause()
+  }, [isPlaying])
 
   useEffect(() => {
-    audioRef.current.src = "/music/1/Amy Winehouse - Back To Black.mp3"
-
-  }, [])
-  const handleClick = () => {
-    if (isPlaying) {
-      audioRef.current.pause()
-    } else {
+    const { playlist, song, songs } = currentMusic
+    if (song) {
+      const src = `/music/${playlist?.id}/0${song.id}.mp3`
+      audioRef.current.src = src
       audioRef.current.play()
-      audioRef.current.volume = 0.1
     }
+
+  }, [currentMusic])
+  const handleClick = () => {
     setIsPlaying(!isPlaying)
   }
   return (
     <div className="flex flex-row justify-between w-full px-4 z-50">
-      <div>CurrentSong...</div>
+      <div>
+        <CurrentSong {...currentMusic.song} />
+      </div>
       <div className="grud place-content-center gap-4 flex-1">
         <div className="flex justify-center">
           <button onClick={handleClick} className="bg-white rounded-full p-2">{isPlaying ? <Pause width={24} height={24} color={'black'} /> : <Play width={24} height={24} color={'black'} />}</button>
           <audio ref={audioRef} />
         </div>
       </div>
-      <div>Volumen</div>
+      <div className="grid place-content-center">
+        <Slider defaultValue={[50]} max={100} min={0} className="w-[95px]" onValueChange={() => {
+          audioRef.current.volume = value
+        }} />
+      </div>
     </div>
   )
 }
