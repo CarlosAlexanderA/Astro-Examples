@@ -2,11 +2,11 @@ import { usePlayerStore } from "@/store/playerStore"
 import { Slider } from "./Slider"
 import { useEffect, useRef, useState } from "react"
 
-export const Pause = ({ width, height, color }) => (
-  <svg role="img" width={width} height={height} aria-hidden="true" viewBox="0 0 16 16"><path fill={color | "currentColor"} d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"></path></svg>
+export const Pause = ({ color, className }) => (
+  <svg className={className} role="img" width={16} height={16} aria-hidden="true" viewBox="0 0 16 16"><path fill={color | "currentColor"} d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"></path></svg>
 )
-export const Play = ({ width, height, color }) => (
-  <svg role="img" width={width} height={height} aria-hidden="true" viewBox="0 0 16 16"><path fill={color | "currentColor"} d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>
+export const Play = ({ color, className }) => (
+  <svg className={className} role="img" width={16} height={16} aria-hidden="true" viewBox="0 0 16 16"><path fill={color | "currentColor"} d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>
 )
 
 export const VolumeSilence = () => (
@@ -96,13 +96,12 @@ const SongControl = ({ audio }) => {
   const duration = audio?.current?.duration ?? 0
   return (
     <div className="flex gap-x-2 text-xs pt-2">
-      <span className="opacity-50">{formatTime(currentTime)}</span>
-      <Slider defaultValue={[50]} value={[currentTime]} max={audio?.current?.duration ?? 0} min={0} className="w-[500px] " onValueChange={(value) => {
+      <span className="opacity-50 w-12 text-right">{formatTime(currentTime)}</span>
+      <Slider defaultValue={[50]} value={[currentTime]} max={audio?.current?.duration ?? 0} min={0} className="w-[400px] " onValueChange={(value) => {
         const [newCurrentTime] = value
         audio.current.currentTime = newCurrentTime
       }} />
-      <span className="opacity-50">{formatTime(duration)}</span>
-
+      {duration ? <span className="opacity-50 w-12">{formatTime(duration)}</span> : '0:00'}
     </div>
   )
 }
@@ -135,8 +134,8 @@ export function Player() {
     setIsPlaying(!isPlaying)
   }
   return (
-    <div className="flex flex-row justify-between w-full px-4 z-50">
-      <div>
+    <div className="flex flex-row justify-between w-full px-2 z-50">
+      <div className="w-[350px]">
         <CurrentSong {...currentMusic.song} />
       </div>
       <div className="grud place-content-center gap-4 flex-1">
