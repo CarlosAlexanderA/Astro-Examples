@@ -1,0 +1,88 @@
+---
+import LogoSpotify from '../icons/LogoSpotify.astro';
+import Home from '../icons/Home.astro';
+import Search from '../icons/Search.astro';
+import Library from '../icons/Library.astro';
+import Add from '../icons/Add.astro';
+import CardSimple from '../components/CardSimple.astro';
+import World from '../icons/World.astro';
+---
+
+<div class="flex flex-col gap-1 h-full">
+  <nav class="bg-deep-black px-6 py-3 rounded-lg">
+    <ul class="flex flex-col gap-5 py-2">
+      <li>
+        <a href="#">
+          <LogoSpotify />
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          class="flex gap-4 text-neutral-gray hover:text-white transition duration-500 font-semibold"
+        >
+          <Home /> Inicio
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          class="flex gap-4 text-neutral-gray hover:text-white transition duration-500 font-semibold"
+        >
+          <Search /> Buscar
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <nav class="bg-deep-black py-4 rounded-lg flex-1">
+    <ul class="flex flex-col gap-5 py-4">
+      <li class="px-5 flex justify-between">
+        <a
+          href="#"
+          class="flex gap-4 text-neutral-gray hover:text-white transition duration-500 font-semibold"
+        >
+          <Library /> Tu Biblioteca
+        </a>
+        <span>
+          <button
+            class="text-neutral-gray rounded-full w-5 h-5 flex justify-center items-center p-3.5 hover:bg-dark-slate hover:text-white transition duration-300"
+          >
+            <Add />
+          </button>
+        </span>
+      </li>
+      <li>
+        <ul class="px-2 flex flex-col gap-6 max-h-[340px] overflow-y-scroll">
+          <li>
+            <CardSimple
+              title="Crea tu primera playlist"
+              subTitle="¡Es muy fácil! Te vamos a ayudar"
+              buttonText="Crear playlist"
+            />
+          </li>
+          <li>
+            <CardSimple
+              title="Busquemos algunos podcast para seguir"
+              subTitle="Te mantendremos al tanto de los nuevos episodios."
+              buttonText="Explorar podcasts"
+            />
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <section class="px-6">
+      <a href="#"><span>Legal</span></a>
+      <a href="#"><span>Centro de privacidad</span></a>
+      <a href="#"><span>Centro de privacidad</span></a>
+      <a href="#"><span>Centro de privacidad</span></a>
+      <a href="#"><span>Centro de privacidad</span></a>
+      <a href="#"><span>Centro de privacidad</span></a>
+      <a href="#"><span>Centro de privacidad</span></a>
+      <a href="#"><span>Centro de privacidad</span></a>
+      <a href="#"><span>Centro de privacidad</span></a>
+    </section>
+    <div>
+      <button> <World /> Español de Latinomarica</button>
+    </div>
+  </nav>
+</div>
