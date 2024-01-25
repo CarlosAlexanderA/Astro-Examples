@@ -34,7 +34,7 @@ import World from '../icons/World.astro';
       </li>
     </ul>
   </nav>
-  <nav class="bg-deep-black py-4 rounded-lg flex-1">
+  <nav class="bg-deep-black py-4 rounded-lg flex-1 flex flex-col gap-6">
     <ul class="flex flex-col gap-5 py-4">
       <li class="px-5 flex justify-between">
         <a
@@ -52,7 +52,7 @@ import World from '../icons/World.astro';
         </span>
       </li>
       <li>
-        <ul class="px-2 flex flex-col gap-6 max-h-[340px] overflow-y-scroll">
+        <ul class="px-2 flex flex-col gap-6 max-h-[360px] overflow-y-scroll">
           <li>
             <CardSimple
               title="Crea tu primera playlist"
@@ -70,19 +70,27 @@ import World from '../icons/World.astro';
         </ul>
       </li>
     </ul>
-    <section class="px-6">
-      <a href="#"><span>Legal</span></a>
-      <a href="#"><span>Centro de privacidad</span></a>
-      <a href="#"><span>Centro de privacidad</span></a>
-      <a href="#"><span>Centro de privacidad</span></a>
-      <a href="#"><span>Centro de privacidad</span></a>
-      <a href="#"><span>Centro de privacidad</span></a>
-      <a href="#"><span>Centro de privacidad</span></a>
-      <a href="#"><span>Centro de privacidad</span></a>
-      <a href="#"><span>Centro de privacidad</span></a>
+    <section
+      class="px-6 flex flex-col gap-4 flex-1 justify-center items-center"
+    >
+      <div class="flex flex-wrap text-xs text-light-gray gap-4 font-semibold">
+        <a href="#" class="hover:underline"><span>Legal</span></a>
+        <a href="#"><span>Centro de privacidad</span></a>
+        <a href="#"><span>Politica de privacidad</span></a>
+        <a href="#"><span>Cookies</span></a>
+        <a href="#"><span>Sobre los anuncios</span></a>
+        <a href="#"><span>Accesibilidad</span></a>
+        <a href="#"><span>Notice at Collection</span></a>
+        <a href="#"><span>Your Privicy Choices</span></a>
+        <a href="#" class="hover:underline"><span>Cookes</span></a>
+      </div>
+      <div class="w-full">
+        <button
+          class="border border-medium-gray text-white flex items-center justify-center gap-2 px-3 py-1.5 rounded-full hover:scale-105 hover:border-white transition-all duration-100"
+        >
+          <World /> Español de Latinomarica</button
+        >
+      </div>
     </section>
-    <div>
-      <button> <World /> Español de Latinomarica</button>
-    </div>
   </nav>
 </div>

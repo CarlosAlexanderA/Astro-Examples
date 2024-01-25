@@ -7,7 +7,9 @@ export default {
 				"deep-black": "#121212",
 				"neutral-gray": "#b3b3b3",
 				"dark-slate": "#1a1a1a",
-				"shadow-gray": "#242424"
+				"shadow-gray": "#242424",
+				"light-gray": "#a7a7a7",
+				"medium-gray": "#727272"
 			}
 		},
 	},
