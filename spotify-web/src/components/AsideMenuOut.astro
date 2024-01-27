@@ -52,7 +52,9 @@ import World from '../icons/World.astro';
         </span>
       </li>
       <li>
-        <ul class="px-2 flex flex-col gap-6 max-h-[360px] overflow-y-scroll">
+        <ul
+          class="px-2 flex flex-col gap-6 max-h-[360px] overflow-y-scroll scroll-custom"
+        >
           <li>
             <CardSimple
               title="Crea tu primera playlist"
@@ -94,3 +96,23 @@ import World from '../icons/World.astro';
     </section>
   </nav>
 </div>
+<style>
+  .scroll-custom::-webkit-scrollbar {
+    /* Customize the scrollbar width */
+    width: 5px;
+  }
+
+  .scroll-custom::-webkit-scrollbar-track {
+    /* Customize the scrollbar track */
+    background: #1b1b1b;
+  }
+
+  .scroll-custom::-webkit-scrollbar-thumb {
+    /* Customize the scrollbar thumb */
+    background: #888;
+    border-radius: 5px;
+  }
+  .scroll-custom::-webkit-scrollbar-thumb:hover {
+    background: #6b6b6b;
+  }
+</style>

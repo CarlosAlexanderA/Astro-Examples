@@ -9,7 +9,10 @@ export default {
 				"dark-slate": "#1a1a1a",
 				"shadow-gray": "#242424",
 				"light-gray": "#a7a7a7",
-				"medium-gray": "#727272"
+				"medium-gray": "#727272",
+				"ebony-black": "#181818",
+				"dark-gray": "#282828",
+				"green-primary": "#1ed760"
 			}
 		},
 	},
