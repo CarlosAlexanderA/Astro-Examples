@@ -20,7 +20,7 @@ const {title} = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div id="app" class="bg-slate-600 w-screen h-screen px-3 py-2 gap-2.5">
+    <div id="app" class="bg-slate-600 w-full h-screen px-3 py-2 gap-2.5">
       <aside class="text-white [grid-area:aside] overflow-hidden rounded-md">
         <AsideMenuOut />
       </aside>
@@ -41,8 +41,8 @@ const {title} = Astro.props;
   }
   #app {
     display: grid;
-    grid-template-areas: 'aside main main' 'footer footer footer';
-    grid-template-columns: 350px minmax(730px, 1fr);
+    grid-template-areas: 'aside main ' 'footer footer ';
+    grid-template-columns: 350px 1fr;
     grid-template-rows: 1fr auto;
   }
   .scroll-custom::-webkit-scrollbar {
