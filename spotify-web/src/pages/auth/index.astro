@@ -1,19 +1,19 @@
 ---
-import ArrowLeft from '@/icons/ArrowLeft.astro';
-import ArrowRight from '@/icons/ArrowRight.astro';
-import Layout from '@/layouts/Layout.astro';
+import ArrowBack from '@/icons/ArrowBack.astro';
+import ArrowNext from '@/icons/ArrowNext.astro';
+import AuthLayout from '@/layouts/AuthLayout.astro';
 import Play from '@/icons/Play.astro';
 import Instagram from '@/icons/Instagram.astro';
 import Twiiter from '@/icons/Twiiter.astro';
 import Facebook from '@/icons/Facebook.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<AuthLayout title="Welcome to Astro.">
   <header class="bg-deep-black px-6 py-3 sticky top-0">
     <nav class="text-neutral-gray flex items-center justify-between">
       <div>
-        <button class="bg-black/70 p-3 rounded-full"><ArrowLeft /></button>
-        <button class="bg-black/70 p-3 rounded-full"><ArrowRight /></button>
+        <button class="bg-black/70 p-3 rounded-full"><ArrowBack /></button>
+        <button class="bg-black/70 p-3 rounded-full"><ArrowNext /></button>
       </div>
       <div class="flex gap-1">
         <button
@@ -281,7 +281,7 @@ import Facebook from '@/icons/Facebook.astro';
     />
     <p class="text-light-gray text-sm">© 2024 Spotify AB</p>
   </section>
-</Layout>
+</AuthLayout>
 
 <style>
   .cards-playlist {

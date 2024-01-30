@@ -1,0 +1,199 @@
+---
+import LogoSpotify from '@/icons/LogoSpotify.astro';
+import Home from '@/icons/Home.astro';
+import Search from '@/icons/Search.astro';
+import Library from '@/icons/Library.astro';
+import Add from '@/icons/Add.astro';
+import CardSimple from '@/components/CardSimple.astro';
+import World from '@/icons/World.astro';
+import ArrowRight from '@/icons/ArrowRight.astro';
+import ArrowNext from '@/icons/ArrowNext.astro';
+import List from '@/icons/List.astro';
+import CardPlaylistSmall from './CardPlaylistSmall.astro';
+// interface Props {
+//   imgUrl: string;
+//   title: string;
+//   anchored: boolean;
+//   description: string;
+// }
+---
+
+<div class="flex flex-col gap-1 h-full">
+  <nav class="bg-deep-black px-6 py-3 rounded-lg">
+    <ul class="flex flex-col gap-5 py-2">
+      <li>
+        <a
+          href="#"
+          class="flex gap-4 text-neutral-gray hover:text-white transition duration-500 font-semibold"
+        >
+          <Home /> Inicio
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          class="flex gap-4 text-neutral-gray hover:text-white transition duration-500 font-semibold"
+        >
+          <Search /> Buscar
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <nav class="bg-deep-black py-4 rounded-lg flex-1 flex flex-col gap-6 h-full">
+    <ul class="flex flex-col gap-4 py-4 px-4 h-full">
+      <li class="flex justify-between px-2 py-1">
+        <a
+          href="#"
+          class="flex gap-4 text-neutral-gray hover:text-white transition duration-500 font-semibold"
+        >
+          <Library /> Tu Biblioteca
+        </a>
+        <span class="flex gap-4">
+          <button
+            class="text-neutral-gray rounded-full w-5 h-5 flex justify-center items-center p-3.5 hover:bg-dark-slate hover:text-white transition duration-300"
+          >
+            <Add />
+          </button>
+          <button
+            class="text-neutral-gray rounded-full w-5 h-5 flex justify-center items-center p-3.5 hover:bg-dark-slate hover:text-white transition duration-300"
+          >
+            <ArrowRight />
+          </button>
+        </span>
+      </li>
+      <li
+        class="flex flex-nowrap gap-2 overflow-hidden relative items-center py-6 px-2"
+      >
+        <div>
+          <button
+            class="bg-dim-black px-2 py-1 rounded-full font-medium hover:bg-white/20 transition-colors duration-150 whitespace-nowrap"
+            >Listas</button
+          >
+        </div>
+        <div>
+          <button
+            class="bg-dim-black px-2 py-1 rounded-full font-medium hover:bg-white/20 transition-colors duration-150 whitespace-nowrap"
+            >Listas asd asd</button
+          >
+        </div>
+        <div>
+          <button
+            class="bg-dim-black px-2 py-1 rounded-full font-medium hover:bg-white/20 transition-colors duration-150 whitespace-nowrap"
+            >Lista asdass</button
+          >
+        </div>
+        <div>
+          <button
+            class="bg-dim-black px-2 py-1 rounded-full font-medium hover:bg-white/20 transition-colors duration-150 whitespace-nowrap"
+            >Lis stas</button
+          >
+        </div>
+        <div
+          class="absolute right-0 z-20 shadow-[-21px_20px_30px_12px_#121212]"
+        >
+          <button
+            class="bg-dim-black hover:bg-white dark-gray p-3 rounded-full border border-red-500"
+          >
+            <ArrowNext /></button
+          >
+          <!-- generator shadow -> https://manuarora.in/boxshadows -->
+        </div>
+      </li>
+      <li class="text-neutral-gray flex gap-4 px-2 items-center">
+        <div
+          class="relative flex-1 flex items-center px-2 py-1 bg-dim-black rounded-md"
+        >
+          <button
+            class="relative z-20 p-2 hover:bg-dim-black -left-2 rounded-full"
+          >
+            <Search size={20} />
+          </button>
+          <input
+            type="text"
+            class="w-full bg-transparent text-sm outline-none relative -left-2"
+            placeholder="Buscar en tu biblioteca"
+          />
+        </div>
+        <div>
+          <button
+            class="flex gap-1 items-center justify-center hover:text-white font-medium"
+            ><span class="w-6 overflow-hidden">Recientes</span><List
+              size={18}
+            /></button
+          >
+        </div>
+      </li>
+      <li class="flex-1 basis-auto h-[300px] flex flex-col">
+        <ul
+          class="flex-1 basis-auto flex flex-col gap-2 max-h-[100%] overflow-y-scroll scroll-custom h-full"
+        >
+          <li>
+            <CardPlaylistSmall
+              imgUrl="https://misc.scdn.co/liked-songs/liked-songs-64.png"
+              title="Canciones que te gustan"
+              anchored
+              description="Lista 497 ▪️ canciones"
+            />
+          </li>
+          <li>
+            <CardPlaylistSmall
+              imgUrl="https://misc.scdn.co/liked-songs/liked-songs-64.png"
+              title="Canciones que te gustan"
+              anchored
+              description="Lista 497 ▪️ canciones"
+            />
+          </li>
+          <li>
+            <CardPlaylistSmall
+              imgUrl="https://i.scdn.co/image/ab6761610000f178581efa688945cbb092df1726"
+              title="Avril Lavigne"
+              isArtist
+              description="Artista"
+            />
+          </li>
+          <li>
+            <CardPlaylistSmall
+              imgUrl="https://misc.scdn.co/liked-songs/liked-songs-64.png"
+              title="Canciones que te gustan"
+              anchored
+              description="Lista 497 ▪️ canciones"
+            />
+          </li>
+          <li>
+            <CardPlaylistSmall
+              imgUrl="https://i.scdn.co/image/ab6761610000f178581efa688945cbb092df1726"
+              title="Avril Lavigne"
+              isArtist
+              description="Artista"
+            />
+          </li>
+          <li>
+            <CardPlaylistSmall
+              imgUrl="https://misc.scdn.co/liked-songs/liked-songs-64.png"
+              title="Canciones que te gustan"
+              anchored
+              description="Lista 497 ▪️ canciones"
+            />
+          </li>
+          <li>
+            <CardPlaylistSmall
+              imgUrl="https://i.scdn.co/image/ab6761610000f178581efa688945cbb092df1726"
+              title="Avril Lavigne"
+              isArtist
+              anchored
+              description="Artista"
+            />
+          </li>
+          <li>
+            <CardPlaylistSmall
+              imgUrl="https://misc.scdn.co/liked-songs/liked-songs-64.png"
+              title="Canciones que te gustan"
+              anchored
+              description="Lista 497 ▪️ canciones"
+            />
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>

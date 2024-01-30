@@ -1,5 +1,6 @@
 ---
-import LogoSpotify from '@/icons/LogoSpotify.astro';
+import AsideMenuOut from '../components/AsideMenuOut.astro';
+import FooterOut from '../components/FooterOut.astro';
 
 interface Props {
   title: string;
@@ -19,19 +20,27 @@ const {title} = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div id="app" class="bg-slate-600 w-full h-full flex flex-col gap-12">
-      <header class="bg-deep-black text-white px-16 py-8">
-        <LogoSpotify height={48} />
-      </header>
-      <main class="flex justify-center items-center">
+    <div id="app" class="bg-black w-screen h-screen px-3 py-2 gap-2.5">
+      <aside class="text-white [grid-area:aside] overflow-hidden rounded-md">
+        <AsideMenuOut />
+      </aside>
+      <main class="[grid-area:main] bg-slate-800 rounded-md overflow-y-scroll">
         <slot />
       </main>
-      <footer class="bg-deep-black px-16 py-8">
-        <p class="text-light-gray text-center text-sm font-medium">
-          Este sitio está protegido por reCAPTCHA y se aplican la Política de
-          Privacidad y los Términos de Servicio de Google.
-        </p>
+      <footer class="[grid-area:footer] bg-blue-400">
+        <FooterOut />
       </footer>
     </div>
   </body>
 </html>
+<style is:global>
+  html {
+    font-family: system-ui, sans-serif;
+  }
+  #app {
+    display: grid;
+    grid-template-areas: 'aside main main' 'footer footer footer';
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: 1fr auto;
+  }
+</style>

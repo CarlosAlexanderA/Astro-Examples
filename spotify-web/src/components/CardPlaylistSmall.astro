@@ -1,0 +1,36 @@
+---
+import Pushpin from '@/icons/Pushpin.astro';
+
+interface Props {
+  isArtist?: boolean;
+  imgUrl: string;
+  title: string;
+  anchored?: boolean;
+  description: string;
+}
+
+const {imgUrl, title, anchored, description, isArtist} = Astro.props;
+---
+
+<div class="p-2 flex h-16 w-full gap-2 hover:bg-white/5 rounded-md">
+  <div
+    class=`h-full overflow-hidden ${isArtist ? "rounded-full" :"rounded-md"} `
+  >
+    <img src={imgUrl} alt={title} class="object-cover h-full w-full" />
+  </div>
+  <div class="flex flex-col justify-center gap-1">
+    <h5 class="text-base font-semibold">{title}</h5>
+    <p class="text-sm flex gap-2 items-center">
+      {
+        anchored && (
+          <span class="text-green-primary">
+            <Pushpin size={13} />
+          </span>
+        )
+      }
+      <span class="line-clamp-1">
+        {description}
+      </span>
+    </p>
+  </div>
+</div>

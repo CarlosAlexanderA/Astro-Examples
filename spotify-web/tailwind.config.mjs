@@ -12,7 +12,8 @@ export default {
 				"medium-gray": "#727272",
 				"ebony-black": "#181818",
 				"dark-gray": "#282828",
-				"green-primary": "#1ed760"
+				"green-primary": "#1ed760",
+				"dim-black": "#1f1f1f"
 			}
 		},
 	},
