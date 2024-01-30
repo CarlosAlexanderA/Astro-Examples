@@ -4,9 +4,10 @@ import AuthLayout from '@/layouts/AuthLayout.astro';
 
 <AuthLayout title="login">
   <section
-    class="bg-deep-black flex flex-col gap-10 text-white px-28 py-20 rounded-xl justify-center items-center"
+    class="bg-deep-black flex flex-col gap-6 text-white px-28 py-20 rounded-xl justify-center items-center"
   >
     <h1 class="text-white text-5xl font-semibold">Iniciar sesión en Spotify</h1>
+
     <ul class="flex flex-col w-[324px] gap-2">
       <li>
         <button
@@ -53,7 +54,58 @@ import AuthLayout from '@/layouts/AuthLayout.astro';
       class="my-2 h-[1px] border-t-0 bg-neutral-100/30 opacity-100 dark:opacity-50 w-full"
     />
 
-    <h1>gello</h1>
+    <form action="#" class="w-[324px] flex flex-col text-white gap-6">
+      <div class="flex flex-col gap-1">
+        <label for="email" class="font-medium text-sm">
+          Email o nombre de usuario</label
+        >
+        <input
+          type="text"
+          name="email"
+          id="email"
+          placeholder="Email o nombre de usuario"
+          class="p-2 font-medium bg-transparent border border-medium-gray hover:border-white focus:border-2 focus:border-white outline-none rounded-md"
+        />
+      </div>
+      <div class="flex flex-col gap-1">
+        <label for="password" class="font-medium text-sm"> Contraseña</label>
+        <input
+          type="text"
+          name="password"
+          id="password"
+          placeholder="Contraseña"
+          class="p-2 font-medium bg-transparent border border-medium-gray hover:border-white focus:border-2 focus:border-white outline-none rounded-md"
+        />
+      </div>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" value="" class="sr-only peer" />
+        <div
+          class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-white rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-deep-black after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-primary"
+        >
+        </div>
+        <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+          >Recordarme</span
+        >
+      </label>
+
+      <div class="flex flex-col gap-4">
+        <button
+          class="w-full bg-green-primary text-deep-black py-2 rounded-full"
+          >Inisiar Sesión</button
+        >
+        <a href="#" class="w-full flex justify-center items-center">
+          ¿Has olvidado tu contraseña?</a
+        >
+      </div>
+    </form>
+    <hr
+      class="my-1 h-[1px] border-t-0 bg-neutral-100/30 opacity-100 dark:opacity-50 w-full"
+    />
+    <div class="flex gap-2">
+      <p class="text-medium-gray">¿No tienes cuenta?</p>
+      <a href="#" class="hover:underline hover:text-green-primary"
+        >Registrate en Spotify</a
+      >
+    </div>
   </section>
 </AuthLayout>
-<style></style>

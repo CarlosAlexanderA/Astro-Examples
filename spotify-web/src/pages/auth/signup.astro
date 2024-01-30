@@ -1,0 +1,86 @@
+---
+import AuthLayout from '@/layouts/AuthLayout.astro';
+---
+
+<AuthLayout title="login">
+  <section
+    class="bg-deep-black flex flex-col gap-6 max-w-[650px] text-white px-28 py-20 rounded-xl justify-center items-center"
+  >
+    <h1 class="text-white text-5xl font-semibold w-[324px]">
+      Registrate para empezar a escuchar contenido
+    </h1>
+    <form action="#" class="w-[324px] flex flex-col text-white gap-5">
+      <div class="flex flex-col gap-1">
+        <label for="email" class="font-medium text-sm">
+          Direccion de email</label
+        >
+        <input
+          type="text"
+          name="email"
+          id="email"
+          placeholder="nombre@dominio.com"
+          class="p-2 font-medium bg-transparent border border-medium-gray hover:border-white focus:border-2 focus:border-white outline-none rounded-md"
+        />
+      </div>
+      <a href="#" class="w-full text-green-primary underline">
+        Usar el número de telefono.</a
+      >
+      <div class="flex flex-col gap-4">
+        <button
+          class="w-full bg-green-primary text-deep-black py-2 rounded-full"
+          >Siguiente</button
+        >
+      </div>
+    </form>
+    <div class="flex items-center my-2 w-full">
+      <div class="border-t border border-neutral-100/30 flex-grow"></div>
+      <div class="px-3 text-medium-gray font-medium">O</div>
+      <div class="border-t border border-neutral-100/30 flex-grow"></div>
+    </div>
+    <ul class="flex flex-col w-[324px] gap-2">
+      <li>
+        <button
+          class="flex gap-8 border border-medium-gray rounded-full w-full px-8 py-2 hover:border-white"
+        >
+          <img
+            src="https://accounts.scdn.co/sso/images/new-google-icon.72fd940a229bc94cf9484a3320b3dccb.svg"
+            class="w-6 h-6"
+          />
+          <span>Registrate con Gooble</span></button
+        >
+      </li>
+      <li>
+        <button
+          class="flex gap-8 border border-medium-gray rounded-full w-full px-8 py-2 hover:border-white"
+        >
+          <img
+            src="https://accounts.scdn.co/sso/images/new-google-icon.72fd940a229bc94cf9484a3320b3dccb.svg"
+            class="w-6 h-6"
+          />
+          <span>Registrate con Facebook</span></button
+        >
+      </li>
+      <li>
+        <button
+          class="flex gap-8 border border-medium-gray rounded-full w-full px-8 py-2 hover:border-white"
+        >
+          <img
+            src="https://accounts.scdn.co/sso/images/new-google-icon.72fd940a229bc94cf9484a3320b3dccb.svg"
+            class="w-6 h-6"
+          />
+          <span>Registrate con Apple</span></button
+        >
+      </li>
+    </ul>
+
+    <hr
+      class="my-1 h-[1px] border-t-0 bg-neutral-100/30 opacity-100 dark:opacity-50 w-full"
+    />
+    <div class="flex gap-2">
+      <p class="text-medium-gray">¿Ya tienes una cuenta?</p>
+      <a href="#" class="hover:underline hover:text-green-primary"
+        >Inicia sesión aqui.</a
+      >
+    </div>
+  </section>
+</AuthLayout>
