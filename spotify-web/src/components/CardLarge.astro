@@ -1,0 +1,41 @@
+---
+import AudioWave from '@/icons/AudioWave.astro';
+import Play from '@/icons/Play.astro';
+
+interface Props {
+  imgUrl: string;
+  title: string;
+  isPlayin?: boolean;
+}
+
+const {imgUrl, title, isPlayin} = Astro.props;
+---
+
+<div
+  class="group flex xl:h-16 h-12 w-full rounded-md bg-white/5 hover:bg-white/10 text-white overflow-hidden"
+>
+  <div class="h-full">
+    <img src={imgUrl} alt={title} class="object-cover h-full w-full" />
+  </div>
+  <div class="flex flex-1 items-center gap-1 relative px-4 py-2">
+    <h5 class="text-base font-medium flex-1">{title}</h5>
+    <div
+      class="group-hover:opacity-100 opacity-0 transition-opacity duration-75 flex relative"
+    >
+      <button
+        class="bg-green-primary rounded-full text-black p-1.5 hover:scale-105 transition-transform duration-100 z-10"
+      >
+        <Play size={20} />
+      </button>
+    </div>
+    {
+      isPlayin && (
+        <div class="absolute justify-self-end right-5 z-0">
+          <span class="text-green-primary">
+            <AudioWave size={24} />
+          </span>
+        </div>
+      )
+    }
+  </div>
+</div>
